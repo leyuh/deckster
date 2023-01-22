@@ -1,5 +1,5 @@
 #home-page {
-    background-color: rgb(164, 179, 194);
+    background-color: rgb(157, 182, 200);
     width: 100vw;
     height: calc(100vh - 60px);
     position: fixed;
@@ -13,7 +13,6 @@
     position: relative;
     left: 0px;
     text-align: center;
-    color: rgb(5, 19, 33);
     font-weight: 100;
 }
 
@@ -41,7 +40,6 @@
     text-align: center;
     line-height: 145px;
     font-size: 20px;
-    color: rgb(5, 19, 33);
 }
 
 .deck-div:hover {
@@ -57,7 +55,7 @@
     border: 0px;
     border-radius: 10px;
     color: white;
-    background-color: rgb(36, 67, 94);
+    background-color: rgb(56, 147, 81);
     font-family: inherit;
     font-size: 20px;
     font-weight: 100;
