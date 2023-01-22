@@ -36,7 +36,27 @@ export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo
         <button id="rename-deck-btn" className="deck-info-btn" onClick={() => {
             setRenaming(true)
         }}>Rename</button>
-        <button id="delete-deck-btn" className="deck-info-btn">Delete</button>
+        <button id="delete-deck-btn" className="deck-info-btn" onClick={() => {
+            if (showDeckInfo) {
+                let thisIndx: number = showDeckInfo.indexKey;
+
+                setShowDeckInfo(null);
+                setDecks((prev) => {
+                    let tempDecks: Deck[] = [];
+                    for (let i = 0; i < prev.length; i++) {
+                        if (i < thisIndx) {
+                            tempDecks.push(prev[i]);
+                        } else if (i > thisIndx) {
+                            let tempPrev: Deck = {...prev[i]};
+                            tempPrev.indexKey = prev[i].indexKey - 1
+                            tempDecks.push(tempPrev)
+                        }
+                    }
+
+                    return tempDecks;
+                })
+            }
+        }}>Delete</button>
         <button id="add-card-btn" className="deck-info-btn">Add card</button>
         <div id="deck-info-cards-div">
             {showDeckInfo ? showDeckInfo.cards.map((val, i) => {
