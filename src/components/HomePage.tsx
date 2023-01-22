@@ -24,7 +24,15 @@ export const HomePage: React.FC<HomePageProps> = ({decks, setDecks}) => {
                 </div>
             })}
         </div>
-        <button id="add-deck-button">CREATE NEW</button>
+        <button id="add-deck-button" onClick={() => {
+            setDecks((prev) => {
+                return [...prev, {
+                    "name": "New Deck",
+                    "cardCount": 0,
+                    "cards": []
+                }]
+            })
+        }}>CREATE NEW</button>
     </div>
   );
 }
