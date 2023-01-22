@@ -5,24 +5,15 @@ import './styles/App.css';
 import { NavBar } from './components/NavBar';
 import { HomePage } from './components/HomePage';
 
+import Deck from './interfaces/Deck';
+
 
 function App() {
 
 
   const [currPage, setCurrPage] = useState<string>("Home");
 
-  const [decks, setDecks] = useState([
-    {
-      "name": "Example Deck",
-      "cardCount": 13,
-      "cards": [["front1", "back1"], ["front2", "back2"]],
-    },
-    {
-      "name": "Example Deck",
-      "cardCount": 13,
-      "cards": [["front1", "back1"], ["front2", "back2"]],
-    }
-  ]);
+  const [decks, setDecks] = useState<Deck[]>([]);
 
   return (
     <div id="app">

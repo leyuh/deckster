@@ -1,12 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import '../styles/HomePage.css';
 
-interface Deck {
-    name: string;
-    cardCount: number;
-    cards: string[][];
-}
-
+import Deck from '../interfaces/Deck';
 
 interface HomePageProps {
     decks: Deck[];
