@@ -1,0 +1,18 @@
+#nav-bar {
+    width: 100vw;
+    height: 60px;
+    background-color: rgb(36, 67, 94);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#nav-title {
+    height: 80%;
+    float: left;
+    position: relative;
+    color: white;
+    left: 20px;
+    top: -20px;
+    font-size: 40px;
+    font-weight: 700;
+}

@@ -1,0 +1,64 @@
+#home-page {
+    background-color: rgb(164, 179, 194);
+    width: 100vw;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0px;
+}
+
+#home-page-title {
+    top: 25px;
+    width: 100%;
+    position: relative;
+    left: 0px;
+    text-align: center;
+    color: rgb(5, 19, 33);
+    font-weight: 100;
+}
+
+#decks-display-div {
+    position: relative;
+    top: 20px;
+    width: 84vw;
+    left: 8vw;
+    height: calc(100% - 200px);
+
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(6, 150px);
+    gap: 60px;
+    overflow-y: scroll;
+}
+
+.deck-div {
+    background-color: white;
+    height: 150px;
+    width: 250px;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 145px;
+    font-size: 20px;
+    color: rgb(5, 19, 33);
+}
+
+.deck-div:hover {
+    cursor: grab;
+}
+
+#add-deck-button {
+    height: 50px;
+    width: 250px;
+    text-align: center;
+    position: relative;
+    left: calc(50vw - 125px);
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(36, 67, 94);
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 100;
+}
