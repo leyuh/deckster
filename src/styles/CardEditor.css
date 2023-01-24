@@ -1,0 +1,44 @@
+#card-editor {
+    height: 300px;
+    width: 600px;
+    background-color: rgb(15, 65, 108);
+    border-radius: 20px;
+    position: absolute;
+    left: calc(50% - 300px);
+    top: calc(50% - 150px);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-editor-side-div {
+    height: 200px;
+    width: 330px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-editor-side-input {
+    height: 90%;
+    width: 90%;
+    text-align: center;
+    font-family: inherit;
+    font-size: 20px;
+}
+
+#card-editor-ok-btn {
+    position: absolute;
+    top: 260px;
+    height: 30px;
+    width: 50px;
+    font-family: inherit;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+    font-weight: bold;
+}

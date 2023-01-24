@@ -9,9 +9,10 @@ interface DeckInfoProps {
     setShowDeckInfo: Dispatch<SetStateAction<(Deck | null)>>;
     decks: Deck[];
     setDecks: Dispatch<SetStateAction<(Deck[])>>;
+    setShowCardEditor: Dispatch<SetStateAction<(number | null)>>;
 }
 
-export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo, decks, setDecks}) => {
+export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo, decks, setDecks, setShowCardEditor}) => {
 
     const [renaming, setRenaming] = useState<boolean>(false);
     const [deleteCard, setDeleteCard] = useState<number | null>(null);
@@ -19,6 +20,7 @@ export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo
     return <div id="deck-info">
         <button id="close-deck-info-btn" onClick={() => {
             setShowDeckInfo(null);
+            setShowCardEditor(null);
         }}>&lt;</button>
         <h1 id="deck-info-title">{showDeckInfo ? showDeckInfo.name : ""}</h1>
         {renaming ? <input id="rename-input" autoFocus onBlur={(e) => {
@@ -61,12 +63,8 @@ export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo
         <button id="add-card-btn" className="deck-info-btn" onClick={() => {
             if (showDeckInfo) {
                 let thisIndx: number = showDeckInfo.indexKey;
-                setDecks((prev) => {
-                    let tempDecks: Deck[] = [...prev];
-                    tempDecks[thisIndx].cards.push(["front", "back"]);
-                    return tempDecks;
-                })
-                setShowDeckInfo(decks[thisIndx]);
+                
+                setShowCardEditor(decks[thisIndx].cards.length - 1);
             }
         }}>Add card</button>
         <div id="deck-info-cards-div">

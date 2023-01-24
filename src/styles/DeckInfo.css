@@ -2,9 +2,9 @@
     height: 600px;
     width: 400px;
     background-color: rgb(15, 65, 108);
-    position: relative;
-    left: calc(50vw - 430px);
-    top: calc(50vh - 320px);
+    position: absolute;
+    left: calc(50vw - 200px);
+    top: calc(50vh - 300px);
     border-radius: 20px;
     overflow-y: scroll;
     border: 5px solid white;
