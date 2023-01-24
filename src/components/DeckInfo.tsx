@@ -14,6 +14,7 @@ interface DeckInfoProps {
 export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo, decks, setDecks}) => {
 
     const [renaming, setRenaming] = useState<boolean>(false);
+    const [deleteCard, setDeleteCard] = useState<number | null>(null);
 
     return <div id="deck-info">
         <button id="close-deck-info-btn" onClick={() => {
@@ -57,12 +58,41 @@ export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo
                 })
             }
         }}>Delete</button>
-        <button id="add-card-btn" className="deck-info-btn">Add card</button>
+        <button id="add-card-btn" className="deck-info-btn" onClick={() => {
+            if (showDeckInfo) {
+                let thisIndx: number = showDeckInfo.indexKey;
+                setDecks((prev) => {
+                    let tempDecks: Deck[] = [...prev];
+                    tempDecks[thisIndx].cards.push(["front", "back"]);
+                    return tempDecks;
+                })
+                setShowDeckInfo(decks[thisIndx]);
+            }
+        }}>Add card</button>
         <div id="deck-info-cards-div">
             {showDeckInfo ? showDeckInfo.cards.map((val, i) => {
                 let front: string = val[0];
                 let back: string = val[1];
-                return <div className="deck-card-display-div" key={i}>
+                return <div className="deck-card-display-div" onMouseOver={() => {
+                    setDeleteCard(i);
+                }} onMouseLeave={() => {
+                    setDeleteCard(null);
+                }} onClick={() => {
+                    if (deleteCard == i) {
+                        setDeleteCard(null);
+                        if (showDeckInfo) {
+                            let thisIndx: number = showDeckInfo.indexKey;
+                            setDecks((prev) => {
+                                let tempDecks: Deck[] = [...prev];
+                                tempDecks[thisIndx].cards.splice(i, 1);
+                                return tempDecks;
+                            })
+                            setShowDeckInfo(decks[thisIndx]);
+                        }
+                    }
+                }} key={i}>
+                    {deleteCard == i ? <h1 className="delete-card-x">X</h1> : ""}
+
                     <div className="deck-card-front deck-card-side">{front}</div>
                     <div className="deck-card-back deck-card-side">{back}</div>
                 </div>

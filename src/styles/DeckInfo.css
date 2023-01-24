@@ -75,15 +75,15 @@
     position: relative;
     background-color: rgb(157, 182, 200);
     width: 380px;
-    left: -10px;
-    height: 140px;
-    margin: 20px;
+    left: 0px;
+    height: 130px;
+    margin: 10px;
     border: 0px;
     border-radius: 5px;
 }
 
 .deck-card-side {
-    height: 110px;
+    height: 100px;
     width: 165px;
     background-color: white;
     border-radius: 5px;
@@ -101,4 +101,20 @@
 .deck-card-back {
     float: right;
     margin-right: 10px;
+}
+
+.delete-card-x {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: -75px;
+    color: rgb(190, 40, 40);
+    font-size: 110px;
+    z-index: 5;
+    text-align: center;
+    font-weight: 600;
+}
+.delete-card-x:hover {
+    cursor: grab;
 }
