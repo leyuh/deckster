@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 
 import './styles/App.css';
 
@@ -20,6 +20,18 @@ function App() {
   const [showDeckInfo, setShowDeckInfo] = useState<Deck | null>(null);
 
   const [showCardEditor, setShowCardEditor] = useState<number | null>(null);
+  
+  useEffect(() => {
+    localStorage.setItem("decks", JSON.stringify(decks));
+  }, [decks]);
+
+  useLayoutEffect(() => {
+    console.log('ping');
+    let stringD: string | null = localStorage.getItem("decks");
+    if (stringD != null) {
+      setDecks(JSON.parse(stringD));
+    }
+  }, [])
 
   return (
     <div id="app">
