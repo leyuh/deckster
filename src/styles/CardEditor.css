@@ -29,6 +29,7 @@
     text-align: center;
     font-family: inherit;
     font-size: 20px;
+    word-wrap: normal;
 }
 
 #card-editor-ok-btn {

@@ -20,12 +20,12 @@ export const CardEditor: React.FC<CardEditorProps> = ({showDeckInfo, setShowDeck
 
     return <div id="card-editor">
         <div id="card-editor-front-div" className="card-editor-side-div">
-            <input id="card-editor-front-input" className="card-editor-side-input" defaultValue="front" onChange={(e) => {
+            <textarea id="card-editor-front-input" className="card-editor-side-input" defaultValue="front" onChange={(e) => {
                 setFrontVal(e.target.value);
             }}/>
         </div>
         <div id="card-editor-back-div" className="card-editor-side-div">
-            <input id="card-editor-back-input" className="card-editor-side-input" defaultValue="back" onChange={(e) => {
+            <textarea id="card-editor-back-input" className="card-editor-side-input" defaultValue="back" onChange={(e) => {
                 setBackVal(e.target.value);
             }}/>
         </div>

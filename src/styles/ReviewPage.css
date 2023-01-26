@@ -1,0 +1,49 @@
+#review-page {
+    background-color: rgb(15, 65, 108);
+    width: 100vw;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#review-card-display {
+    height: 400px;
+    width: 550px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+}
+#review-card-display:hover{
+    cursor: grab;
+}
+
+#review-buttons-div {
+    position: relative;
+    top: 250px;
+}
+
+#review-buttons-div > * {
+    background-color: white;
+    border: 0px;
+    height: 35px;
+    margin: 5px;
+    font-family: inherit;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+#review-exit-btn {
+    width: 120px;
+}
+
+.review-direction-btn {
+    width: 35px;
+}

@@ -10,9 +10,10 @@ interface DeckInfoProps {
     decks: Deck[];
     setDecks: Dispatch<SetStateAction<(Deck[])>>;
     setShowCardEditor: Dispatch<SetStateAction<(number | null)>>;
+    setCurrPage: Dispatch<SetStateAction<(string)>>;
 }
 
-export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo, decks, setDecks, setShowCardEditor}) => {
+export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo, decks, setDecks, setShowCardEditor, setCurrPage}) => {
 
     const [renaming, setRenaming] = useState<boolean>(false);
     const [deleteCard, setDeleteCard] = useState<number | null>(null);
@@ -35,7 +36,9 @@ export const DeckInfo: React.FC<DeckInfoProps> = ({showDeckInfo, setShowDeckInfo
                 })
             }
         }}></input> : ""}
-        <button id="review-deck-btn" className="deck-info-btn">Review</button>
+        <button id="review-deck-btn" className="deck-info-btn" onClick={() => {
+            setCurrPage("Review");
+        }}>Review</button>
         <button id="rename-deck-btn" className="deck-info-btn" onClick={() => {
             setRenaming(true)
         }}>Rename</button>

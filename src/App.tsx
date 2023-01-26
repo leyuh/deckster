@@ -6,6 +6,7 @@ import { NavBar } from './components/NavBar';
 import { HomePage } from './components/HomePage';
 import { DeckInfo } from './components/DeckInfo';
 import { CardEditor } from './components/CardEditor';
+import { ReviewPage } from './components/ReviewPage';
 
 import Deck from './interfaces/Deck';
 
@@ -22,12 +23,18 @@ function App() {
 
   return (
     <div id="app">
-      <NavBar/>
+      <NavBar
+        setCurrPage={setCurrPage}
+      />
       {currPage == "Home" ? <HomePage
         decks={decks}
         setDecks={setDecks}
         showDeckInfo={showDeckInfo}
         setShowDeckInfo={setShowDeckInfo}
+      /> : ""}
+      {currPage == "Review" ? <ReviewPage
+        setCurrPage={setCurrPage}
+        deck={showDeckInfo}
       /> : ""}
       {showDeckInfo ? <DeckInfo
         showDeckInfo={showDeckInfo}
@@ -35,6 +42,7 @@ function App() {
         decks={decks}
         setDecks={setDecks}
         setShowCardEditor={setShowCardEditor}
+        setCurrPage={setCurrPage}
       /> : ""}
       {(showDeckInfo != null && showCardEditor != null) ? <CardEditor
         showDeckInfo={showDeckInfo}
