@@ -1,11 +1,11 @@
 #review-page {
-    background-color: rgb(15, 65, 108);
+    background-color: #073263;
     width: 100vw;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 50px);
     position: fixed;
-    top: 60px;
+    top: 50px;
     left: 0px;
-    z-index: 3;
+    z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,19 +31,22 @@
 }
 
 #review-buttons-div > * {
-    background-color: white;
+    background-color: rgb(119, 152, 183);
     border: 0px;
-    height: 35px;
+    height: 50px;
     margin: 5px;
     font-family: inherit;
     font-size: 25px;
-    border-radius: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: 3px solid #03172b;
 }
 
 #review-exit-btn {
-    width: 120px;
+    width: 140px;
 }
 
 .review-direction-btn {
-    width: 35px;
+    width: 50px;
 }

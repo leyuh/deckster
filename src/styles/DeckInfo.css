@@ -8,6 +8,7 @@
     border-radius: 20px;
     overflow-y: scroll;
     border: 5px solid white;
+    z-index: 3;
 }
 
 #deck-info > * {

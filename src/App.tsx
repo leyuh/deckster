@@ -37,6 +37,8 @@ function App() {
     <div id="app">
       <NavBar
         setCurrPage={setCurrPage}
+        setShowDeckInfo={setShowDeckInfo}
+        setShowCardEditor={setShowCardEditor}
       />
       {currPage == "Home" ? <HomePage
         decks={decks}

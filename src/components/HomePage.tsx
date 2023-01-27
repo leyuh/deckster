@@ -13,7 +13,6 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({decks, setDecks, showDeckInfo, setShowDeckInfo}) => {
   return (
     <div id="home-page">
-        <h1 id="home-page-title">My Decks</h1>
         <div id="decks-display-div">
             {decks.map((val, i) => {
                 return <div className="deck-div" id={`deck-div-${i}`} onClick={() => {
